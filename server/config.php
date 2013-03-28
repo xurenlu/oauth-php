@@ -4,7 +4,7 @@ $dbOptions = array(
 	'server'   => 'localhost',
 	'username' => 'renlu',
 	'password' => '',
-	'database' => 'oauth'
+	'database' => 'oauth_server'
 );
 $hostOptions = array(
     "prefix"=>"http://localhost/open/"

@@ -18,7 +18,7 @@ $consumer = array(
 );
 
 include_once 'config.php';
-include_once 'oauth-php/library/OAuthStore.php';
+include_once '../oauth-php/library/OAuthStore.php';
 
 $user_id = $_user_id;
 // 注册消费方
@@ -44,6 +44,6 @@ $consumer_key = "'.$consumer_key.'";
 $consumer_secret = "'.$consumer_secret.'";
 
 ';
-file_put_contents("./oauth_config.php",$str);
+file_put_contents("../oauth_config.php",$str);
 echo $str;
 ?>

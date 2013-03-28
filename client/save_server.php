@@ -1,7 +1,7 @@
 <?php
-include "oauth_config.php";
-include_once 'config.php';
-include_once 'oauth-php/library/OAuthStore.php';
+include "../oauth_config.php";
+include_once './config.php';
+include_once '../oauth-php/library/OAuthStore.php';
 
 $store = OAuthStore::instance('MySQL', $dbOptions);
 
@@ -13,10 +13,10 @@ $server = array(
     'consumer_key'      => $consumer_key,
     'consumer_secret'   => $consumer_secret,
     'server_uri'        => $hostOptions["prefix"],
-    'signature_methods' => array('HMAC-SHA1', 'PLAINTEXT'),
-    'request_token_uri' => $hostOptions["prefix"].'request_token.php',
-    'authorize_uri'     => $hostOptions["prefix"].'auth.php',
-    'access_token_uri'  => $hostOptions["prefix"].'access_token.php'
+    'signature_methods' => array('HMAC-SHA1','MD5'),
+    'request_token_uri' => $hostOptions["prefix"].'server/request_token.php',
+    'authorize_uri'     => $hostOptions["prefix"].'server/auth.php',
+    'access_token_uri'  => $hostOptions["prefix"].'server/access_token.php'
 );
 // 将服务器信息保存在 OAuthStore 中
 $consumer_key = $store->updateServer($server, $user_id);

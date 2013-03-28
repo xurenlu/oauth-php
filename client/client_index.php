@@ -2,9 +2,9 @@
 ob_start();
 if(isset($_GET['req']) && ($_GET['req'] == 1)){
     include_once 'config.php';
-    include_once "oauth_config.php";
-	include_once 'oauth-php/library/OAuthStore.php';
-	include_once 'oauth-php/library/OAuthRequester.php';
+    include_once "../oauth_config.php";
+	include_once '../oauth-php/library/OAuthStore.php';
+	include_once '../oauth-php/library/OAuthRequester.php';
 
 	$store = OAuthStore::instance('MySQL', $dbOptions);
 

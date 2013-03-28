@@ -5,13 +5,13 @@ session_start();
 if (empty($_SESSION['authorized']))
 {
 	$uri = $_SERVER['REQUEST_URI'];
-	header('Location: /open/login.php?goto=' . urlencode($uri));
+	header('Location: login.php?goto=' . urlencode($uri));
 	exit();
 }
 
 include_once 'config.php';
-include_once 'oauth-php/library/OAuthStore.php';
-include_once 'oauth-php/library/OAuthServer.php';
+include_once '../oauth-php/library/OAuthStore.php';
+include_once '../oauth-php/library/OAuthServer.php';
 
 //登陆用户
 $user_id = $_user_id;
@@ -41,7 +41,7 @@ try
             $tmp[]=urlencode($k)."=".urlencode($v);
         }
         //header("Location:cb.php?".join("&",$tmp));
-        header("Location:cb.php?token=".$rs["token"]);
+        header("Location:../client/cb.php?token=".$rs["token"]);
     }
 	else
 	{

@@ -1,8 +1,8 @@
 <?php
 include_once 'config.php';
-include_once 'oauth-php/library/OAuthStore.php';
-include_once 'oauth-php/library/OAuthServer.php';
-include_once 'oauth-php/library/OAuthRequestVerifier.php';
+include_once '../oauth-php/library/OAuthStore.php';
+include_once '../oauth-php/library/OAuthServer.php';
+include_once '../oauth-php/library/OAuthRequestVerifier.php';
 echo "客户端提交:<pre>";
 echo "\nPOST\n";
 print_r($_POST);
